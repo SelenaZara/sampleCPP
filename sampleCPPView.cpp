@@ -12,7 +12,6 @@
 
 #include "sampleCPPDoc.h"
 #include "sampleCPPView.h"
-#include "Car.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -54,7 +53,7 @@ BOOL CsampleCPPView::PreCreateWindow(CREATESTRUCT& cs)
 
 // CsampleCPPView drawing
 
-void CsampleCPPView::OnDraw(CDC* pDC)
+void CsampleCPPView::OnDraw(CDC* /*pDC*/)
 {
 	CsampleCPPDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
@@ -62,26 +61,6 @@ void CsampleCPPView::OnDraw(CDC* pDC)
 		return;
 
 	// TODO: add draw code for native data here
-	// Create two Car objects for practice
-	Car carObj1;
-	carObj1.brand = "BMW";
-	carObj1.model = "X5";
-	carObj1.year = 1999;
-
-	Car carObj2;
-	carObj2.brand = "Ford";
-	carObj2.model = "Mustang";
-	carObj2.year = 1969;
-
-	// Format and draw two lines of text in the view
-	CString line;
-	line.Format(_T("Car 1: %S %S (%d)"), carObj1.brand.c_str(), carObj1.model.c_str(), carObj1.year);
-	pDC->TextOutW(10, 10, line);
-	line.Format(_T("Car 3: %S %S (%d)"), carObj1.brand.c_str(), carObj1.model.c_str(), carObj1.year);
-	pDC->TextOutW(10, 50, line);
-
-	line.Format(_T("Car 2: %S %S (%d)"), carObj2.brand.c_str(), carObj2.model.c_str(), carObj2.year);
-	pDC->TextOutW(10, 30, line);
 }
 
 
